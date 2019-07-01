@@ -4,7 +4,8 @@ import Home from './views/Home.vue';
 import Login from './components/Login.vue';
 import HomePage from './components/HomePage.vue';
 import HolleWorld from './components/HelloWorld.vue';
-import StudentMessage from './views/student/StudentMessage.vue';
+import StudentInformation from './views/student/StudentInformation.vue';
+import TeacherInformation from './views/teacher/TeacherInformation.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -25,9 +26,14 @@ export default new Router({
       component: HomePage,
     },
     {
-      path: '/student_message',
-      name: 'student_message',
-      component: StudentMessage,
+      path: '/student_information',
+      name: 'student_information',
+      component: StudentInformation,
+    },
+    {
+      path: '/teacher_information',
+      name: 'teacher_information',
+      component: TeacherInformation,
     },
     {
       path: '/holle_world',

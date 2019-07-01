@@ -1,15 +1,16 @@
 <template>
   <div>
     <div>
-      <el-button type="primary" @click="dialogVisible = true">学生新增</el-button>
+      <el-button type="primary" @click="dialogVisible = true">教师新增</el-button>
     </div>
-    <el-table :data="studentMessagetList">
+    <el-table :data="teacherInformationtList">
       <el-table-column type="index"></el-table-column>
       <el-table-column prop="name" label="姓名"></el-table-column>
       <el-table-column prop="gender" label="性别"></el-table-column>
       <el-table-column prop="age" label="年龄"></el-table-column>
-      <el-table-column prop="school" label="学校"></el-table-column>
-      <el-table-column prop="address" label="地址"></el-table-column>
+      <el-table-column prop="educationBackground " label="学历"></el-table-column>
+      <el-table-column prop="school" label="毕业院校"></el-table-column>
+      <el-table-column prop="major" label="专业"></el-table-column>
       <el-table-column type="expand"></el-table-column>
     </el-table>
 
@@ -21,12 +22,12 @@
         width="30%"
         :before-close="handleClose"
       >
-        <el-form :model="studentMessage" style="margin: 0 20px ">
+        <el-form :model="teacherInformation" style="margin: 0 20px ">
           <el-form-item label="姓 名" :label-width="formLabelWidth">
-            <el-input v-model="studentMessage.name" placeholder></el-input>
+            <el-input v-model="teacherInformation.name" placeholder></el-input>
           </el-form-item>
           <el-form-item label="性 别" :label-width="formLabelWidth">
-            <el-input v-model="studentMessage.gender" placeholder></el-input>
+            <el-input v-model="teacherInformation.gender" placeholder></el-input>
           </el-form-item>
           <el-form-item
             label="年 龄"
@@ -36,13 +37,16 @@
       { type: 'number', message: '年龄必须为数字值'}
     ]"
           >
-            <el-input v-model.number="studentMessage.age" placeholder type="age" autocomplete="off"></el-input>
+            <el-input v-model.number="teacherInformation.age" placeholder type="age" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="学 校" :label-width="formLabelWidth">
-            <el-input v-model="studentMessage.school" placeholder></el-input>
+          <el-form-item label="学历" :label-width="formLabelWidth">
+            <el-input v-model="teacherInformation.educationBackground" placeholder></el-input>
           </el-form-item>
-          <el-form-item label="住 址" :label-width="formLabelWidth">
-            <el-input v-model="studentMessage.address" placeholder></el-input>
+          <el-form-item label="毕业院校" :label-width="formLabelWidth">
+            <el-input v-model="teacherInformation.school" placeholder></el-input>
+          </el-form-item>
+          <el-form-item label="专业" :label-width="formLabelWidth">
+            <el-input v-model="teacherInformation.major" placeholder></el-input>
           </el-form-item>
         </el-form>
         <span slot="footer" class="dialog-footer">
@@ -56,20 +60,21 @@
 
 <script>
 export default {
-  name: "StudentMessage",
+  name: "TeacherInformation",
   data() {
     return {
-      studentMessage: {
+      teacherInformation: {
         name: null,
         gender: null,
         age: null,
+        educationBackground: null,
         school: null,
-        address: null
+        major: null
       },
-      studentMessagetList: [],
+      teacherInformationtList: [],
       search: null,
       dialogVisible: false,
-      formLabelWidth: "60px"
+      formLabelWidth: "80px"
     };
   }
 };

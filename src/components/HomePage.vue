@@ -28,8 +28,8 @@
             </template>
             <el-menu-item-group>
               <template slot="title">分组一</template>
-              <el-menu-item index="1-1" route="/student_message">学生信息</el-menu-item>
-              <el-menu-item index="1-2" route="/">选项2</el-menu-item>
+              <el-menu-item index="1-1" route="/student_information">学生信息</el-menu-item>
+              <el-menu-item index="1-2" route="/teacher_information">教师信息</el-menu-item>
             </el-menu-item-group>
             <el-submenu index="1-3">
               <template slot="title">选项3</template>
